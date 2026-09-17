@@ -6,6 +6,7 @@ const NS = 'http://www.w3.org/2000/svg';
 const field = $('#scene');
 const equipped = 'assets/acuna-equipped.png';
 const underlay = 'assets/acuna-underlay.png';
+const naturalHead = 'assets/acuna-head-natural.png';
 const {width, height} = imageSize;
 const el = (tag, attrs = {}) => {
   const node = document.createElementNS(NS, tag);
@@ -58,6 +59,16 @@ body.append(photo(underlay));
 const bodyTop = photo(equipped);
 bodyTop.setAttribute('mask', 'url(#body-mask)');
 body.append(bodyTop);
+// Show only the corrected portrait region; the original body and gear stay aligned.
+const headClip = el('clipPath', {id:'helmetless-head-clip', clipPathUnits:'userSpaceOnUse'});
+headClip.append(el('rect', {x:595, y:165, width:265, height:245}));
+defs.append(headClip);
+const bareHead = photo(naturalHead);
+bareHead.id = 'helmetless-head';
+bareHead.setAttribute('clip-path', 'url(#helmetless-head-clip)');
+bareHead.style.opacity = '0';
+body.append(bareHead);
+const helmet = parts.find(part => part.id === 'helmet');
 const complete = photo(equipped);
 complete.id = 'assembled-master';
 body.append(complete);
@@ -240,6 +251,7 @@ function render(time) {
   if (Math.abs(target-amount) < .00005) amount = target;
   const intact = amount === 0 && parts.every(part => part.visible);
   complete.style.display = intact ? '' : 'none';
+  bareHead.style.opacity = helmet.visible ? String(Math.min(1, amount * 12)) : '1';
   svg.dataset.assembled = String(intact);
   svg.dataset.explosion = amount.toFixed(4);
   for (const part of parts) {
@@ -251,7 +263,7 @@ function render(time) {
   }
 }
 rows(); frame(); setAmount(0); requestAnimationFrame(render);
-Promise.all([equipped, underlay].map(src => new Promise((resolve, reject) => {
+Promise.all([equipped, underlay, naturalHead].map(src => new Promise((resolve, reject) => {
   const image = new Image(); image.onload = resolve; image.onerror = reject; image.src = src;
 }))).then(() => $('#loading')?.remove()).catch(() => {
   $('#loading').textContent = 'The image could not load. Reload to try again.';

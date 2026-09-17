@@ -1,0 +1,11 @@
+# Helmetless portrait correction
+
+Generated with the built-in image generation tool on September 16, 2026. Output: `assets/acuna-head-natural.png` (1024 × 1536).
+
+Inputs: existing helmetless underlay as the edit target; user-supplied close-up of Acuña’s short fade as the face/hair reference; equipped image as the helmet alignment reference.
+
+The site displays only the head region of this output with an SVG clip. The original equipped image, body, gear contours and offsets remain unchanged. The corrected head fades in as the helmet moves away and is fully shown when the helmet is hidden.
+
+## Final prompt
+
+Use case: precise-object-edit / identity-preserve. Asset type: photorealistic head correction for an interactive Ronald Acuña Jr. baseball illustration. Image 1 is the EDIT TARGET, a 1024x1536 helmetless full-body batting image. Image 2 is the user's real-life FACE AND HAIRCUT REFERENCE. Image 3 is an ALIGNMENT REFERENCE only, the equipped version in the exact same pose. Edit IMAGE 1 only, retain its exact 1024x1536 canvas and pixel registration. Change ONLY the head and hair region approximately x610–825, y180–390. Replace the long braids/dreadlocks with the short black textured curly top and tight tapered fade from image 2. Give him a natural rounded skull, realistic forehead and hairline, and a believable likeness to the reference: balanced facial proportions, natural eyes and subtly relaxed lips, avoiding the current exaggerated pout. Keep the same rightward-looking head angle, gaze direction, ear position, face size, black eye paint, neck attachment and photographic lighting. Do not flip the reference pose into the target. Keep head size compatible with the original helmet in image 3. No hat or helmet in the output. Maintain a coherent photorealistic sports portrait, realistic skin texture and hair detail. CRITICAL INVARIANTS: unchanged body, batting stance, bat and hands, neck position, jersey, arms, tattoos, pants, socks, white background, camera, framing, scale, shadows and all pixels outside the small head region. Do not add gloves, guards, jewelry or cleats. Return the edited full image at 1024x1536, not a crop.
