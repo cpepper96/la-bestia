@@ -31,7 +31,7 @@ GitHub Pages serves the root of the `main` branch. Push changes to `main` to upd
 
 ## Artwork and references
 
-The player artwork is an AI-generated photographic reconstruction in a navy Braves jersey, with highlighter-yellow gear and a classic 13 pendant. Every moving piece clips pixels from the same master image so the assembled view stays aligned. A matching underlay appears beneath removed pieces. A separately clipped portrait correction gives the helmetless view a natural short fade and expression; its generation prompt is recorded in `IMAGE-PROMPTS.md`.
+The player artwork is an AI-generated photographic reconstruction in a navy Braves jersey, with highlighter-yellow gear and a classic 13 pendant. Every moving piece clips pixels from the same master image so the assembled view stays aligned. A matching underlay appears beneath removed pieces. A separately clipped portrait correction keeps the same natural face and short fade beneath the helmet in every state; its generation prompt is recorded in `IMAGE-PROMPTS.md`.
 
 Product cards use documented best matches and comparable Nike retail specifications. Jewelry purity and weight are labeled estimates. The page’s Sources & image notes dialog contains references and the supplied equipment photograph.
 

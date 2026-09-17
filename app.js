@@ -59,19 +59,17 @@ body.append(photo(underlay));
 const bodyTop = photo(equipped);
 bodyTop.setAttribute('mask', 'url(#body-mask)');
 body.append(bodyTop);
-// Show only the corrected portrait region; the original body and gear stay aligned.
+// Keep one fixed portrait behind the helmet in every state.
 const headClip = el('clipPath', {id:'helmetless-head-clip', clipPathUnits:'userSpaceOnUse'});
 headClip.append(el('rect', {x:595, y:165, width:265, height:245}));
 defs.append(headClip);
 const bareHead = photo(naturalHead);
 bareHead.id = 'helmetless-head';
 bareHead.setAttribute('clip-path', 'url(#helmetless-head-clip)');
-bareHead.style.opacity = '0';
-body.append(bareHead);
-const helmet = parts.find(part => part.id === 'helmet');
 const complete = photo(equipped);
 complete.id = 'assembled-master';
 body.append(complete);
+body.append(bareHead);
 svg.append(body);
 
 let selected = null;
@@ -251,13 +249,11 @@ function render(time) {
   if (Math.abs(target-amount) < .00005) amount = target;
   const intact = amount === 0 && parts.every(part => part.visible);
   complete.style.display = intact ? '' : 'none';
-  bareHead.style.opacity = helmet.visible ? String(Math.min(1, amount * 12)) : '1';
   svg.dataset.assembled = String(intact);
   svg.dataset.explosion = amount.toFixed(4);
   for (const part of parts) {
     part.node.style.display = part.visible ? '' : 'none';
     part.node.setAttribute('aria-hidden', !part.visible);
-    part.image.style.opacity = intact ? '0' : '1';
     const [dx, dy] = layers[part.id].offset;
     part.node.setAttribute('transform', `translate(${dx*amount} ${dy*amount})`);
   }

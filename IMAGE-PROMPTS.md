@@ -4,7 +4,7 @@ Generated with the built-in image generation tool on September 16, 2026. Output:
 
 Inputs: existing helmetless underlay as the edit target; user-supplied close-up of Acuña’s short fade as the face/hair reference; equipped image as the helmet alignment reference.
 
-The site displays only the head region of this output with an SVG clip. The original equipped image, body, gear contours and offsets remain unchanged. The corrected head fades in as the helmet moves away and is fully shown when the helmet is hidden.
+The site displays only the head region of this output with an SVG clip. The original equipped image, body, gear contours and offsets remain unchanged. The corrected head stays fixed and fully visible in every state, including assembly. Equipment layers render above it so the helmet simply reveals the same face as it moves away. No portrait cross-fade or face swap is used.
 
 ## Final prompt
 
