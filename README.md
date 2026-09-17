@@ -1,5 +1,7 @@
 # The Anatomy of La Bestia
 
+[Open the live site](https://cpepper96.github.io/la-bestia/)
+
 An interactive look at Ronald Acuña Jr.’s batting kit, inspired by [Human Atlas](https://github.com/ashemag/human-atlas).
 
 Select equipment to see product details, drag the explosion slider to separate the layers, or isolate a piece. The page includes nine selectable layers, visibility controls, pan/zoom, animation, and a responsive layout.
