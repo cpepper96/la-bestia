@@ -1,4 +1,14 @@
-# Helmetless portrait correction
+# Original face and fitted helmet
+
+Current output: `assets/acuna-hair-original-face.png` (1024 × 1536), generated with the built-in image generation tool on September 17, 2026.
+
+The user prefers the original facial expression and fitted helmet. The new asset corrects only the hair/scalp, with a compact crop that fits inside the original shell. The original-expression portrait stays fixed over the head region in both assembled and exploded states, with the original helmet and equipment rendered above it. The body and equipment use the unchanged equipped image. All gear contours and offsets stay the same. The earlier full-face replacement below is no longer displayed.
+
+## Final prompt
+
+Use case: precise-object-edit. Edit Image 1 ONLY: a 1024x1536 helmetless photograph-style baseball figure. Keep the EXACT ORIGINAL FACE AND EXPRESSION from image 1: same eyes, eyebrows, cheekbone, nose, parted/pursed lips, beard, ear, gaze, head angle, head size and neck. Do NOT beautify, relax or redraw the face. The user specifically prefers this original expression. Change ONLY the hair and upper scalp, replacing long trailing braids with a compact short black textured crop and close tapered sides guided by Image 3. No tall afro or bulky curls: very short, restrained texture and natural rounded skull. Image 2 is the exact fitted helmet reference: the new hair and skull must fit UNDER that helmet, staying inside its existing crown silhouette, not sticking out above or beside the shell. Preserve the original forehead position and natural skin transition, do not enlarge, lengthen, tilt or reposition the head. The visible facial features below the helmet brim should be indistinguishable from the original Image 1. Remove the braids behind the ear cleanly, retaining the original ear and neck. Pixel-aligned full-frame 1024x1536 output. Everything outside the hair/scalp must remain unchanged, including the original pouting batting expression, eye black, body, stance, bat, hands, tattoos, uniform, socks, lighting and white background. No helmet in output. No added equipment. Return the full image.
+
+# Earlier portrait experiment (superseded)
 
 Generated with the built-in image generation tool on September 16, 2026. Output: `assets/acuna-head-natural.png` (1024 × 1536).
 
